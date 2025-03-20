@@ -7,6 +7,7 @@ heslo = "Admin123"
 
 tajna_zprava = "42"
 
+
 def main():
 
     with sync_playwright() as p:
@@ -22,17 +23,17 @@ def main():
 
         page.click('button[class="login-btn"]')
 
-        page.locator('p[class="super-secret-text"]') 
+        page.locator('p[class="super-secret-text"]')
+        # U: Co takhle zkusit uložit to, co vrací locator pod nějakou proměnnou?
         # se dá použít funkce .text_content(), která vypíše text daného prvku
-
 
         # !!!
 
         print(tajna_zprava)
-        
+
         input("klik pro zavreni")
         browser.close()
-    
+
 
 if __name__ == "__main__":
     main()
